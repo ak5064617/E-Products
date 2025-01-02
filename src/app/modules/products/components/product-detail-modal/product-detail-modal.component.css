@@ -1,0 +1,145 @@
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1900;
+  }
+  
+  .modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 2%;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 10123121;
+    width: 80%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2%;
+    width: 80%;
+    gap: 10px;
+  }
+  
+  .close-btn {
+    background: none;
+    border: none;
+    font-size: 40px;
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+  }
+  .img-container{
+    width: 100%;
+    border: 1px solid #ddd;
+
+  }
+  .detail{
+    display: flex;
+    flex-direction: column;
+  }
+  .title{
+    font-size: 30px;
+    font-weight: 800;
+    line-height: 1.4;
+  }
+  
+  .description{
+    font-size: 14px;
+    font-weight: 500;
+    color: #878787;
+    line-height: 1.4;
+  }
+  .product-image {
+    max-width: 200px;
+    height: 200px;
+    object-fit: contain;
+  }
+  .price-rating{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-weight: 600;
+    flex: 1;
+  }
+  .price{
+    color: orange;
+  }
+  .rate{
+    color: cadetblue;
+
+  }
+  .count{
+    color:teal;
+  }
+
+
+  .rating{
+    display: flex;
+    justify-content: end;
+  }
+  .action{
+    display: flex;
+    gap: 20px;
+    height: 35px;
+    width: 80%;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+
+  }
+  .btn{
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    min-width: calc(100%/3);
+    max-width: calc(100%/3);
+    height: 100%;
+  }
+  
+  .description, .availability, .price {
+    margin: 0.5rem 0;
+  }
+  
+  @media (max-width: 480px) {
+    .flex-item {
+      min-width: 100%;
+      max-width: 100%;
+    }
+    .title{
+        font-size: 18px;
+        font-weight: 800;
+        line-height: 1;
+    }
+    .price-rating{
+        flex-direction: column;
+        display: block;
+    }
+
+    .action{
+        flex-direction: column;
+        width: 100%;
+        gap: 5px;
+    }
+    .btn{
+        max-width: 100%;
+        min-width: 100%;
+    }
+    .rating{
+        display: block;
+    }
+  }

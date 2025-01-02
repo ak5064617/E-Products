@@ -1,0 +1,25 @@
+<div class="modal-backdrop" (click)="closeModal()"></div>
+<div class="modal">
+  <div class="close-btn" *ngIf="product" (click)="closeModal()">×</div>
+  
+  <div class="modal-content" >
+    <div class="detail">
+        <div class="title" title="{{ product.title }}">{{ product.title }}</div>
+        <p class="description" title="{{ product.description }}">{{ product.description }}</p>
+    </div>
+    <div class="img-container">
+        <img [src]="product.image" alt="{{ product.title }}" class="product-image">
+    </div>
+    <div class="price-rating">
+        <div>Price: Rs. <span class="price"> {{product.price}}</span></div>
+        <div class="rating">
+            <div>Rating: <span class="rate"> {{product.rating.rate}}</span> | <span class="count"> {{product.rating.count}}</span> </div>
+        </div>
+    </div>
+    <div class="action">
+       <button  class="btn">ADD TO CART</button>
+       <button  class="btn">WISHLIST</button>
+       <button  class="btn">BUY NOW</button>
+    </div>
+  </div>
+</div>

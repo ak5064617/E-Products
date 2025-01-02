@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="filters">
+        <app-cumstom-dropdown
+        [options]="categories"
+        placeholder="Select Category"
+        [(selected)]="filters.filterBy"
+        (selectedChange)="applyFilters()"
+        [isOpen]="openDropdown === 'sorting'"
+        (toggle)="onDropdownToggle('sorting')"
+      ></app-cumstom-dropdown>
+    
+      <app-cumstom-dropdown
+        [options]="['Price: Low to High', 'Price: High to Low']"
+        placeholder="Sort by"
+        [(selected)]="filters.sortBy"
+        (selectedChange)="applyFilters()"
+        [isOpen]="openDropdown === 'filtering'"
+        (toggle)="onDropdownToggle('filtering')"
+      ></app-cumstom-dropdown>
+      </div>
+      
+      <div class="product-grid">
+        <div *ngFor="let product of filteredProducts; let i=index" (click)="showDetails(product)" class="product-item">
+          <img [src]="product.image" [alt]="product.title" loading="lazy">
+          <div class="title">{{ product.title }}</div>
+          <div class="category">{{ product.category }}</div>
+          <div class="price">Price: Rs. {{ product.price }}</div>
+        </div>
+      </div>
+      
+      <div *ngIf="isLoading" class="loading-indicator">Load More...</div>
+</div>
