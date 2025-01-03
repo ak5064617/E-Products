@@ -12,5 +12,15 @@
 </head>
 <body class="mat-typography">
   <app-root></app-root>
+  <script type="text/javascript">
+    var redirectToIndex = function() {
+      var path = window.location.pathname;
+      var redirectPath = '/E-Products/index.html';
+      if (path !== '/' && path !== redirectPath) {
+        window.location = redirectPath + '?path=' + encodeURIComponent(path);
+      }
+    };
+    redirectToIndex();
+  </script>
 </body>
 </html>
